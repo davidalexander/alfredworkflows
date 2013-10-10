@@ -134,8 +134,8 @@ def complete(query, maxresults=_MAX_RESULTS):
     hosts = Hosts(original=host, user=user)
     for results in (
         fetch_ssh_config('~/.ssh/config'),
-        fetch_known_hosts('~/.ssh/known_hosts'),
-        fetch_hosts('/etc/hosts'),
+        # fetch_known_hosts('~/.ssh/known_hosts'),
+        # fetch_hosts('/etc/hosts'),
         fetch_bonjour('_ssh._tcp')
     ):
         hosts.update(results)
